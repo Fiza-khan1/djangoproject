@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10">
+    <h3 class="text-white my-5">ADD POST</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+       
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field.title }}
+                {% if fm.is_bound and field.errors %}
+                    <div class="alert alert-danger">
+                        {{ field.errors | striptags }}
+                    </div>
+                {% endif %}
+            </div>
+     
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock content %}

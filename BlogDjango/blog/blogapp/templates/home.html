@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{%for field in post%}
+<div class="jumbotron">
+    <div class="container">    
+        <h1 class="display-4">{{field.title}}</h1>
+        <p class="lead">{{field.desc}}.</p>
+    </div>
+</div>
+{%endfor%}
+{% endblock content %}
